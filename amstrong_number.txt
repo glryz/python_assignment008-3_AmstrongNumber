@@ -1,0 +1,15 @@
+user_enter = input("Enter a positive integer number for checking if it's an Amstrong number or not:")
+
+while not user_enter.isdecimal() or user_enter == '0' :  # pozitif tam sayıların dışında kalan tüm durumları ifade ettik
+    print("It is an invalid entry. Don't use non-numeric, float, or negative values!")
+    user_enter = input("Enter a positive integer number :")  # hatalı giriş olduğunda tekrar giriş istiyoruz. 
+
+digits = list(user_enter)
+operation = 0  # rakamların üslerini alıp bu değişkende toplayacağız.
+
+for i in range(len(digits)) :
+    operation += int(digits[i])**len(digits)  # sayının amstrong olup olmadığını belirleyen formül
+if str(operation) == user_enter :   # formülün sonucu girilen sayı ile aynı ise bu bir amstrong sayı demektir.
+    print(user_enter, "is an Amstrong number")
+else :
+    print("It is not an Amstrong number")
